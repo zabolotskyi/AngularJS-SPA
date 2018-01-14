@@ -1,0 +1,37 @@
+<form ng-controller="authorsFormCtrl" name="authorsForm" novalidate>
+	
+	<div class="form-group">
+		<label>Surname*</label>
+		<input name="authorSurname" type="text" class="form-control" ng-value="inputAuthorsVal" ng-model="currentAuthor.surname" required pattern="[A-Za-z]{1,50}">	
+		<div class="error" ng-show="authorsForm.authorSurname.$invalid && authorsForm.authorSurname.$dirty">
+			{{getError(authorsForm.authorSurname.$error)}}
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label>Name*</label>
+		<input name="authorName" type="text" class="form-control" ng-value="inputAuthorsVal" ng-model="currentAuthor.name" required pattern="[A-Za-z]{1,50}">
+		<div class="error" ng-show="authorsForm.authorName.$invalid && authorsForm.authorName.$dirty">
+			{{getError(authorsForm.authorName.$error)}}
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label>Middle name</label>
+		<input name="authorMiddleName" type="text" class="form-control" ng-value="inputAuthorsVal" ng-model="currentAuthor.middleName" pattern="[A-Za-z]{1,50}">
+		<div class="error" ng-show="authorsForm.authorMiddleName.$invalid && authorsForm.authorMiddleName.$dirty">
+			{{getError(authorsForm.authorMiddleName.$error)}}
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label>Birth date*</label>
+		<input type="text" class="form-control" id="datepicker" ng-value="inputAuthorsVal" ng-model="currentAuthor.birthDate" required>
+	</div>
+
+	<div>
+		<button class="btn btn-primary" ng-click="saveAuthor(currentAuthor)" ng-disabled="authorsForm.$invalid">Save</button>
+		<button class="btn btn-primary" ng-click="cancelAuthor()">Cancel</button>
+	</div>
+
+</form>

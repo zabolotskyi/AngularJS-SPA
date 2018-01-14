@@ -1,0 +1,29 @@
+<form ng-controller="booksFormCtrl" name="booksForm" novalidate="novalidate">
+
+	<div class="form-group">
+		<label>Name*</label>
+		<input name="bookName" type="text" class="form-control" ng-value="inputBooksVal" ng-model="currentBook.name" required pattern="[A-Za-z\s]{1,50}">
+		<div class="error" ng-show="booksForm.bookName.$invalid && booksForm.bookName.$dirty">
+			{{getError(booksForm.bookName.$error)}}
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label>Pages*</label>
+		<input name="bookPages" type="text" class="form-control" ng-value="inputBooksVal" ng-model="currentBook.pages" required pattern="[0-9]{1,10}">
+		<div class="error" ng-show="booksForm.bookPages.$invalid && booksForm.bookPages.$dirty">
+			{{getError(booksForm.bookPages.$error)}}
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label>Genre*</label>
+		<select name="bookGenre" class="form-control" ng-options="genre for genre in genres" ng-value="inputBooksVal" ng-model="currentBook.genre" required></select>
+	</div>
+
+	<div>
+		<button class="btn btn-primary" ng-click="saveBook(currentBook, author.id)" ng-disabled="booksForm.$invalid">Save</button>
+		<button class="btn btn-primary" ng-click="cancelBook()">Cancel</button>
+	</div>
+
+</form>

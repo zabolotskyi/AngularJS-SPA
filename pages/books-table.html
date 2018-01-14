@@ -1,0 +1,53 @@
+<div>
+	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>
+					<button ng-click="sortBy('name')">Name</button>
+					<span class="sortorder" ng-show="propertyName == 'name'" ng-class="{reverse: reverse}"></span>
+				</th>
+				<th>
+					<button ng-click="sortBy('pages')">Pages</button>
+					<span class="sortorder" ng-show="propertyName == 'pages'" ng-class="{reverse: reverse}"></span>
+				</th>
+				<th>
+					<button ng-click="sortBy('genre')">Genre</button>
+					<span class="sortorder" ng-show="propertyName == 'genre'" ng-class="{reverse: reverse}"></span>
+				</th>
+				<th>
+					<button ng-click="unsort()">Set to unsorted</button>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="book in author.books | orderBy : propertyName : reverse track by $index">
+				<td>{{book.name}}</td>
+				<td>{{book.pages}}</td>
+				<td>{{book.genre}}</td>
+				<td>
+					<button class="btn btn-primary btn-xs" ng-click="addBook(book)">Edit</button>
+					<button class="btn btn-primary btn-xs" ng-click="deleteBook(book, author.id)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<button class="btn btn-primary" ng-click="addBook()">Add book</button>
+		<button id="findBook" class="btn btn-primary" ng-click="findBook(author.id)">Find book</button>
+		<button class="btn btn-primary" ng-click="refreshBooks(author.id)" ng-show="serverUI">Refresh</button>
+		<button class="btn btn-primary" ng-click="refreshBooks(author.id)" ng-show="!serverUI">Set default books</button>
+	</div>
+
+	<div class="ui-widget hidden find-book">
+		<label>Book name</label>
+		<input type="text" id="tags"/>
+		<button class="btn btn-primary" ng-click="goBack()">Go Back</button>
+	</div>
+
+	<div>
+		<p id="paragraph"></p>
+	</div>
+
+</div>

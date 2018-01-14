@@ -1,0 +1,17 @@
+<div class="panel panel-primary">
+
+	<div class="panel-heading">
+		<h3>Books</h3>
+		<button class="btn btn-primary pull-right" ng-click="goToAuthors()">Go to Authors</button>
+	</div>
+
+	<a href="#!authors" class="hidden" id="toAuthors"></a>
+
+	<div class="panel-body">
+
+		<ng-include src="'pages/books-table.html'" ng-show="currentViewBooks == 'table'"></ng-include>
+		<ng-include src="'pages/books-add.html'" ng-show="currentViewBooks == 'add'"></ng-include>
+
+	</div>
+
+</div>

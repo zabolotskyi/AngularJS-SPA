@@ -1,0 +1,14 @@
+<div class="panel panel-primary">
+
+	<div class="panel-heading">
+		<h3>Authors</h3>
+	</div>
+
+	<div class="panel-body">
+
+		<ng-include src="'pages/authors-table.html'" ng-show="currentViewAuthors == 'table'"></ng-include>
+		<ng-include src="'pages/authors-add.html'" ng-show="currentViewAuthors == 'add'"></ng-include>
+
+	</div>
+
+</div>

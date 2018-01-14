@@ -1,0 +1,52 @@
+<div>
+	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>
+					<button ng-click="sortBy('surname')">Surname</button>
+					<span class="sortorder" ng-show="propertyName == 'surname'" ng-class="{reverse: reverse}"></span>
+				</th>
+				<th>
+					<button ng-click="sortBy('name')">Name</button>
+					<span class="sortorder" ng-show="propertyName == 'name'" ng-class="{reverse: reverse}"></span>
+				</th>
+				<th>
+					<button ng-click="sortBy('middleName')">Middle name</button>
+					<span class="sortorder" ng-show="propertyName == 'middleName'" ng-class="{reverse: reverse}"></span>
+				</th>
+				<th>
+					<button ng-click="sortBy('birthDate')">Birth date</button>
+					<span class="sortorder" ng-show="propertyName == 'birthDate'" ng-class="{reverse: reverse}"></span>
+				</th>
+				<th>Books</th>
+				<th>
+					<button ng-click="unsort()">Set to unsorted</button>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="author in authors | orderBy : propertyName : reverse track by $index">
+				<td>{{author.surname}}</td>
+				<td>{{author.name}}</td>
+				<td>{{author.middleName}}</td>
+				<td>{{author.birthDate | date : "M/d/yyyy"}}</td>
+				<td>
+					<button class="btn btn-primary btn-xs" ng-click="goToBooks(author, author.id)">View books</button>
+					<a href="#!books" class="hidden" id="toBooks"></a>
+				</td>
+				<td>
+					<button class="btn btn-primary btn-xs" ng-click="addAuthor(author)">Edit</button>
+					<button class="btn btn-primary btn-xs" ng-click="deleteAuthor(author)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<button class="btn btn-primary" ng-click="addAuthor()">Add author</button>
+		<button class="btn btn-primary" ng-click="refreshAuthors()" ng-show="serverUI">Refresh</button>
+		<button class="btn btn-primary" ng-click="refreshAuthors()" ng-show="!serverUI">Set default authors</button>
+	</div>
+
+</div>

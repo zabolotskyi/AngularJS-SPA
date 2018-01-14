@@ -1,0 +1,22 @@
+.panel-heading h3 {
+	display: inline-block;
+}
+.sortorder:after {
+  content: "\25b2";   // BLACK UP-POINTING TRIANGLE
+}
+.sortorder.reverse:after {
+  content: "\25bc";   // BLACK DOWN-POINTING TRIANGLE
+}
+form .ng-pristine {
+	border: 1px dotted gray;
+}
+form .ng-invalid.ng-dirty {
+	background-color: lightpink;
+}
+form .ng-valid.ng-dirty {
+	background-color: lightgreen;
+}
+div.error {
+	color: red;
+	font-weight: bold;
+}
