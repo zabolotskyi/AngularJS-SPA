@@ -35,6 +35,8 @@ app.factory("updateService", function($http, deploydService, authorsUrl) {
 					if (scope.authors[i].id == authorId) {
 						for (var j = 0; j < scope.authors[i].books.length; j++) {
 							if (scope.authors[i].books[j].id == book.id) {
+								var bookPages = parseInt(book.pages);
+								book.pages = bookPages;
 								scope.authors[i].books[j] = book;
 								var author = scope.authors[i];
 								break;
@@ -61,6 +63,8 @@ app.factory("updateService", function($http, deploydService, authorsUrl) {
 					if (scope.authors[i].id == authorId) {
 						for (var j = 0; j < scope.authors[i].books.length; j++) {
 							if (scope.authors[i].books[j].id == book.id) {
+								var bookPages = parseInt(book.pages);
+								book.pages = bookPages;
 								scope.authors[i].books[j] = book;
 								break;
 							}

@@ -33,10 +33,11 @@ app.factory("createService", function($http, deploydService, authorsUrl) {
 						} else {
 							var prevBookId = scope.authors[i].books[scope.authors[i].books.length - 1].id;
 						}
+						var bookPages = parseInt(book.pages);
 						scope.authors[i].books.push({
 							id : ++prevBookId,
 							name : book.name,
-							pages : book.pages,
+							pages : bookPages,
 							genre : book.genre
 						});
 						var newAuthor = scope.authors[i];
@@ -65,10 +66,11 @@ app.factory("createService", function($http, deploydService, authorsUrl) {
 						} else {
 							var prevBookId = scope.authors[i].books[scope.authors[i].books.length - 1].id;
 						}
+						var bookPages = parseInt(book.pages);
 						scope.authors[i].books.push({
 							id : ++prevBookId,
 							name : book.name,
-							pages : book.pages,
+							pages : bookPages,
 							genre : book.genre
 						});
 						break;
