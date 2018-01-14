@@ -18,4 +18,4 @@
 
 <p>There are two possible options for data source: Local Storage and Deployd. Local Storage is the default option. To enable server data manipulation go to js/app.js file and replace deploydServiceProvider.serverEnabled(false) with true argument on line 22. </p>
 
-<p>Live demo :  <a href="https://zabolotskyi.github.io/AngularJS-SPA"></a>.</p>
+<p><a href="https://zabolotskyi.github.io/AngularJS-SPA">Live demo.</a></p>
