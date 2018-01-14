@@ -8,10 +8,11 @@
 <p>Available data manipulations:</p>
 
 <ul>
-	<li>Adding new authors/books</li>
+  <li>Adding new authors/books</li>
   <li>Editing authors/books</li>
   <li>Deleting authors/books</li>
   <li>Sorting authors/books</li>
+  <li>Book search by name using jQuery UI autocomplete widget</li>
 </ul>
 
 <p>All forms have user input validation.</p>
