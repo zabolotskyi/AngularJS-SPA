@@ -1,8 +1,5 @@
 <h1>Simple AngularJS SPA</h1>
 
-Данные приложения необходимо сохранить в LocalStorage либо реализовать REST API для сохранения информации на сервере. Учтите необходимость изменения источника данных приложения в будущем.
-
-
 <p>This single page application gives the ability to manipulate the data about authors and their books.</p>
 
 <p>Available data manipulations:</p>
