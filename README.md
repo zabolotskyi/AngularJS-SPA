@@ -1,4 +1,4 @@
-<h1>Simple AngularJS SPA (not final version)</h1>
+<h1>Simple AngularJS SPA</h1>
 
 <p>This single page application gives the ability to manipulate the data about authors and their books.</p>
 
